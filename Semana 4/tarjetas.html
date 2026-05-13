@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <title>TURISMO PERÚ</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .contenedor {
+        margin: 0 auto;
+        width: 800px;
+        height: 300px;
+        border: 1px solid black;
+        position: relative;
+      }
+
+      .tarjeta1,
+      .tarjeta2,
+      .tarjeta3,
+      .tarjeta4 {
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        top: -300px;
+        background-size: cover;
+      }
+
+      .tarjeta1 {
+        background-image: url(img/mar.jpg);
+        left: 0px;
+        animation: tarjeta1 3s 1 forwards;
+        animation-delay: 0s;
+      }
+
+      .tarjeta2 {
+        background-image: url(img/costa.jpg);
+        left: 200px;
+        animation: tarjeta1 3s 1 forwards;
+        animation-delay: 3s;
+      }
+
+      .tarjeta3 {
+        background-image: url(img/sierra.jpg);
+        left: 400px;
+        animation: tarjeta1 3s 1 forwards;
+        animation-delay: 6s;
+      }
+
+      .tarjeta4 {
+        background-image: url(img/selva.jpg);
+        left: 600px;
+        animation: tarjeta1 3s 1 forwards;
+        animation-delay: 9s;
+      }
+
+      @keyframes tarjeta1 {
+        0% {
+          top: -300px;
+          transform: rotateY(180deg);
+        }
+        50% {
+          top: 300px;
+        }
+        100% {
+          top: 0px;
+        }
+      }
+
+      /* EVENTOS */
+      .tarjeta1:hover,
+      .tarjeta2:hover,
+      .tarjeta3:hover,
+      .tarjeta4:hover {
+        transition: 1s;
+        scale: 1.2;
+        z-index: 4;
+      }
+
+      h1 {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .resaltado {
+        width: 100%;
+        text-align: right;
+        position: absolute;
+        bottom: 0px;
+        z-index: 5;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        animation: resaltado 12.5s forwards;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes resaltado {
+        0% {
+          background-color: transparent;
+          backdrop-filter: blur(0px);
+          opacity: 0;
+        }
+        80% {
+          background-color: transparent;
+          backdrop-filter: blur(0px);
+          opacity: 0;
+        }
+        100% {
+          background-color: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(2px);
+          opacity: 1;
+        }
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="resaltado"><h1>TURISMO PERÚ</h1></div>
+      <div class="tarjeta1"></div>
+      <div class="tarjeta2"></div>
+      <div class="tarjeta3"></div>
+      <div class="tarjeta4"></div>
+    </div>
+    <footer>
+      <button
+        onclick="history.back()"
+        style="font-size: 20px; padding: 15px 30px"
+      >
+        ← Volver
+      </button>
+    </footer>
+  </body>
+</html>

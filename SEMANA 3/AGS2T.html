@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #contenedor {
+        width: 400px;
+        height: 200px;
+        order: 1px solid black;
+        position: relative;
+        margin: 0 auto; /*centrar el contenedor*/
+        overflow: hidden; /*oculta todo lo que contiene*/
+      }
+
+      #estrella1 {
+        width: 8px; /*m*/
+        height: 8px; /*m*/
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 30px; /*m*/
+        left: -10px;
+        animation: mover 3s infinite; /*m*/
+        animation-timing-function: linear; /*m*/
+        /*animation-delay: 1s; /*m*/
+      }
+
+      #estrella2 {
+        width: 5px; /*m*/
+        height: 5px; /*m*/
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 100px; /*m*/
+        left: -10px;
+        animation: mover 4s infinite; /*m*/
+        animation-timing-function: linear; /*m*/
+        animation-delay: 1s; /*m*/
+      }
+
+      #estrella3 {
+        width: 6px; /*m*/
+        height: 6px; /*m*/
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 160px; /*m*/
+        left: -10px;
+        animation: mover 2.5s infinite; /*m*/
+        animation-timing-function: linear; /*m*/
+        animation-delay: 0.5s; /*m*/
+      }
+
+      #estrella4 {
+        width: 4px; /*m*/
+        height: 4px; /*m*/
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 70px; /*m*/
+        left: -10px;
+        animation: mover 5s infinite; /*m*/
+        animation-timing-function: linear; /*m*/
+        animation-delay: 2s; /*m*/
+      }
+
+      #estrella5 {
+        width: 7px; /*m*/
+        height: 7px; /*m*/
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 130px; /*m*/
+        left: -10px;
+        animation: mover 3.5s infinite; /*m*/
+        animation-timing-function: linear; /*m*/
+        animation-delay: 1.5s; /*m*/
+      }
+
+      @keyframes mover {
+        from {
+          left: -10px;
+        }
+        to {
+          left: 410px;
+        }
+      }
+
+      #contenedor {
+        background: black;
+      }
+
+      #cohete {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 60px;
+        left: 160px;
+        animation: balanceo 3s infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      #cohete img {
+        width: 80px;
+        height: 80px;
+      }
+
+      @keyframes balanceo {
+        0% {
+          transform: rotate(-6deg);
+        }
+        50% {
+          transform: rotate(6deg);
+        }
+        100% {
+          transform: rotate(-6deg);
+        }
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="estrella1"></div>
+      <div id="estrella2"></div>
+      <div id="estrella3"></div>
+      <div id="estrella4"></div>
+      <div id="estrella5"></div>
+      <div id="cohete">
+        <img src="cohete.png" alt="" />
+      </div>
+    </div>
+    <footer>
+      <button
+        onclick="history.back()"
+        style="font-size: 20px; padding: 15px 30px"
+      >
+        ← Volver
+      </button>
+    </footer>
+  </body>
+</html>
