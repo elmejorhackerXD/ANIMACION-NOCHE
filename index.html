@@ -2,49 +2,302 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <script src="https://kit.fontawesome.com/f368768ce7.js" crossorigin="anonymous"></script>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mis Trabajos</title>
+    <script
+      src="https://kit.fontawesome.com/f368768ce7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: black;
+        min-height: 100vh;
+        padding: 3rem 2rem;
+        color: white;
+      }
+
+      .portfolio-header {
+        margin-bottom: 3rem;
+      }
+
+      .portfolio-header .tag {
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #f5d335;
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-header h1 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 52px;
+        line-height: 1;
+        color: white;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      .portfolio-header p {
+        font-size: 14px;
+        color: gray;
+        margin-top: 0.5rem;
+      }
+
+      .proyecto {
+        margin-bottom: 2.5rem;
+      }
+
+      .proyecto-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #555;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .proyecto-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #222;
+      }
+
+      .proyecto-titulo {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 22px;
+        color: white;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+
+      .links-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .link-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: black;
+        border: 1px solid #222;
+        border-radius: 10px;
+        padding: 14px 18px;
+        text-decoration: none;
+        color: white;
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          transform 0.15s;
+      }
+
+      .link-card:hover {
+        border-color: #f5d335;
+        background: black;
+        transform: translateX(4px);
+      }
+
+      .link-card .link-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .link-card .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #f5d335;
+        flex-shrink: 0;
+      }
+
+      .link-card .link-name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .link-card .link-icon {
+        font-size: 18px;
+        color: gray;
+        transition: color 0.2s;
+      }
+
+      .link-card:hover .link-icon {
+        color: #f5d335;
+      }
+
+      .link-card img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+        filter: brightness(0) invert(1);
+      }
+
+      .link-card:hover img {
+        opacity: 1;
+      }
+      footer {
+        display: flex;
+        flex-direction: column; /* apila en columna */
+        align-items: center; /* centra todo */
+        gap: 12px;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #222;
+        text-align: center;
+      }
+
+      footer img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        clip-path: circle(50% at 50% 50%); /* recorte circular */
+        border: 3px solid black;
+      }
+
+      .footer-nombre {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 20px;
+        color: #f0ece3;
+        letter-spacing: 1px;
+      }
+
+      .footer-sub {
+        font-size: 12px;
+        color: #555;
+        margin-top: 2px;
+      }
+    </style>
   </head>
   <body>
-    <h1>MIS PROYECTOS DE ANIMACION WEB</h1>
-    <ol>
-      <li>
-        PROYECTO - TABLERO DE AJEDREZ 
-        <ul><br>
-          <li><a href="tablero/index.html">AJEDREZ <i class="fa-solid fa-chess fa-2xl" style="color: rgb(30, 48, 80);"></i></a></li>
-        </ul><br>
-      </li>
-      
-      <li>
-        PROYECTO - ESTILOS DE ANIMACIONES CON BIOGRAFIAS
-        <ul><br>
-          <li>
-            <a href="estilosA/EJERCICIO_1/index.html">BIOGRAFIA MANUEL S.C <i class="fa-solid fa-gavel fa-2xl" style="color: rgb(30, 48, 80);"></i></a>
-          </li><br>
-          <li>
-            <a href="estilosA/EJERCICIO_2/index.html">BIOGRAFIA SAM ALTMAN <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="30px"></a>
-          </li><br>
-          <li>
-            <a href="estilosA/EJERCICIO_3/index.html"
-              >BIOGRAFIA Dra. Lisa Su (蘇姿丰) <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg" width="30px"></a
-            >
-          </li><br>
-        </ul>
-      </li>
-      <li>
-        PROYECTO - MOVIMIENTO DE DIVS Y TIEMPOS DE ANIMACIÓN
-        <ul><br>
-          <li><a href="SEMANA 3/AGS2T.html">COHETE ESPACIAL <i class="fa-solid fa-rocket" style="color: rgb(226, 23, 23);"></i></a></li>
-        </ul><br>
-      </li>
-      <li>
-        PROYECTO - ANIMACIÓN A BANNERS
-        <ul><br>
-          <li><a href="Semana 4/tarjetas.html">BANNERS TURISTICOS <i class="fa-solid fa-image fa-xl" style="color: rgb(119, 172, 107);"></i></a></li><br>
-          <li><a href="Semana 4/lenguajes.html">BANNERS LENGUAJES <i class="fa-brands fa-html5 fa-xl" style="color: rgb(242, 140, 7);"></i><i class="fa-brands fa-css3-alt" style="color: rgb(28, 19, 214);"></i><i class="fa-brands fa-js" style="color: rgb(255, 212, 59);"></i> </a></li><br>
-        </ul>
-      </li>
-    </ol>
+    <div class="portfolio-header">
+      <div class="tag">Portafolio</div>
+      <h1>Mis proyectos<br />de animación web</h1>
+      <p>Trabajos de CSS, animaciones y diseño en movimiento</p>
+    </div>
+
+    <div class="proyecto">
+      <div class="proyecto-label">01</div>
+      <div class="proyecto-titulo">Tablero de ajedrez</div>
+      <div class="links-grid">
+        <a href="Semana 1/index.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">Ajedrez</span>
+          </div>
+          <i class="fa-solid fa-chess link-icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="proyecto">
+      <div class="proyecto-label">02</div>
+      <div class="proyecto-titulo">Estilos de animaciones con biografías</div>
+      <div class="links-grid">
+        <a href="Semana 2/EJERCICIO_1/index.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">Biografía Manuel S.C</span>
+          </div>
+          <i class="fa-solid fa-gavel link-icon"></i>
+        </a>
+        <a href="Semana 2/EJERCICIO_2/index.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">Biografía Sam Altman</span>
+          </div>
+          <i class="fa-solid fa-robot link-icon"></i>
+        </a>
+        <a href="Semana 2/EJERCICIO_3/index.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">Biografía Dra. Lisa Su (蘇姿丰)</span>
+          </div>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="proyecto">
+      <div class="proyecto-label">03</div>
+      <div class="proyecto-titulo">
+        Movimiento de divs y tiempos de animación
+      </div>
+      <div class="links-grid">
+        <a href="SEMANA 3/AGS2T.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">Cohete espacial</span>
+          </div>
+          <i class="fa-solid fa-rocket link-icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="proyecto">
+      <div class="proyecto-label">04</div>
+      <div class="proyecto-titulo">Animación a banners</div>
+      <div class="links-grid">
+        <a href="Semana 4/tarjetas.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">Banners turísticos</span>
+          </div>
+          <i class="fa-solid fa-image link-icon"></i>
+        </a>
+        <a href="Semana 4/lenguajes.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">Banners lenguajes</span>
+          </div>
+          <div style="display: flex; gap: 4px; font-size: 18px">
+            <i class="fa-brands fa-html5" style="color: #e34c26"></i>
+            <i class="fa-brands fa-css3-alt" style="color: #264de4"></i>
+            <i class="fa-brands fa-js" style="color: #f7df1e"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="proyecto">
+      <div class="proyecto-label">05</div>
+      <div class="proyecto-titulo">Motion Flyer Producto</div>
+      <div class="links-grid">
+        <a href="Semana 5/index.html" class="link-card">
+          <div class="link-left">
+            <div class="dot"></div>
+            <span class="link-name">ANUNCIO COCOFRESH</span>
+          </div>
+          <i class="fa-solid fa-leaf" style="color: rgb(172, 144, 107)"></i>
+        </a>
+      </div>
+    </div>
+    <footer>
+      <img src="mifoto.png" alt="Tu nombre" />
+      <div>
+        <p class="footer-nombre">Ismael Roaldo Carlos Bardales</p>
+        <p class="footer-sub">Creador de la pagina</p>
+      </div>
+    </footer>
   </body>
 </html>

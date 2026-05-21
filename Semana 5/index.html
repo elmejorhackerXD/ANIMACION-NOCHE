@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocos</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #1a1a1a; /* gris oscuro, casi negro */
+        color: #f0ece3; /* texto claro */
+      }
+
+      .contenedor {
+        width: 400px;
+        height: 700px;
+        background: #f5d335;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .rama {
+        width: 300px;
+        height: 250px;
+        background: url(img/palmeras.png) center/cover no-repeat;
+        position: absolute;
+        top: -60px;
+        left: 200px;
+        transform: rotate(-50deg);
+        z-index: 0;
+      }
+
+      .coco {
+        position: absolute;
+        background: url(img/coco14.png) center/contain no-repeat;
+        animation:
+          caer 1.2s forwards,
+          desaparecer 1s forwards;
+        animation-delay: var(--delay), 4s;
+      }
+
+      .coco1 {
+        width: 300px;
+        height: 300px;
+        left: 200px;
+        top: -80px;
+        --finalY: 610px;
+        filter: blur(2px);
+        animation:
+          caerIzquierda 1.2s forwards,
+          desaparecer 1s forwards 4s;
+      }
+
+      .coco2 {
+        width: 150px;
+        height: 160px;
+        left: 230px;
+        top: -160px;
+        --finalY: 500px;
+        animation:
+          caerIzquierda 1.2s forwards,
+          desaparecer 1s forwards 4.4s;
+      }
+
+      .coco3 {
+        width: 190px;
+        height: 190px;
+        left: -40px;
+        top: -200px;
+        --finalY: 700px;
+        --delay: 0s;
+        filter: blur(2px);
+      }
+
+      .coco4 {
+        width: 150px;
+        height: 150px;
+        left: 90px;
+        top: -260px;
+        --finalY: 430px;
+        --delay: 0s;
+      }
+
+      .coco5 {
+        width: 170px;
+        height: 170px;
+        left: 230px;
+        top: -320px;
+        --finalY: 300px;
+        --delay: 0s;
+        position: absolute;
+        background: url(img/cocOm.png) center/contain no-repeat;
+        animation:
+          caer 1.2s forwards,
+          desaparecer 1s forwards;
+        animation-delay: var(--delay), 4s;
+      }
+
+      @keyframes caer {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        70% {
+          transform: translateY(var(--finalY)) rotate(20deg);
+        }
+        82% {
+          transform: translateY(calc(var(--finalY) - 20px)) rotate(10deg);
+        }
+        100% {
+          transform: translateY(var(--finalY)) rotate(20deg);
+        }
+      }
+
+      @keyframes caerIzquierda {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        70% {
+          transform: translateY(var(--finalY)) rotate(-65deg);
+        }
+        82% {
+          transform: translateY(calc(var(--finalY) - 20px)) rotate(-65deg);
+        }
+        100% {
+          transform: translateY(var(--finalY)) rotate(-65deg);
+        }
+      }
+
+      @keyframes desaparecer {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(900px) rotate(90deg);
+          opacity: 0;
+        }
+      }
+
+      .coco1 {
+        animation-delay: 0s, 4s;
+      }
+      .coco2 {
+        animation-delay: 0.4s, 4.4s;
+      }
+      .coco3 {
+        animation-delay: 0.8s, 4.8s;
+      }
+      .coco4 {
+        animation-delay: 1.2s, 5.2s;
+      }
+      .coco5 {
+        animation-delay: 1.6s, 5.6s;
+      }
+
+      /* TEXTO */
+
+      .texto {
+        position: absolute;
+        bottom: 250px;
+        left: 30px;
+        z-index: 0;
+      }
+
+      .ya-probaste {
+        font-family: sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        color: brown;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transform-origin: left center;
+        opacity: 0;
+        animation:
+          entrarTexto 0.5s ease-out forwards,
+          salirTexto 0.5s ease-in forwards;
+        animation-delay: 0.8s, 4s;
+      }
+
+      .el-nuevo {
+        font-family: sans-serif;
+        font-size: 58px;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+        text-transform: uppercase;
+        transform-origin: left center;
+        opacity: 0;
+        animation:
+          entrarTexto 0.5s ease-out forwards,
+          salirTexto 0.5s ease-in forwards;
+        animation-delay: 1.2s, 4.4s;
+      }
+
+      .sabor {
+        font-family: sans-serif;
+        font-size: 58px;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+        text-transform: uppercase;
+        transform-origin: left center;
+        opacity: 0;
+        animation:
+          entrarTexto 0.5s ease-out forwards,
+          salirTexto 0.5s ease-in forwards;
+        animation-delay: 1.6s, 4.8s;
+      }
+
+      @keyframes entrarTexto {
+        0% {
+          opacity: 0;
+          transform: scaleX(1) translateX(-40px);
+        }
+        100% {
+          opacity: 1;
+          transform: scaleX(1) translateX(0px);
+        }
+      }
+
+      @keyframes salirTexto {
+        0% {
+          opacity: 1;
+          transform: scaleX(1) translateX(0px);
+        }
+        100% {
+          opacity: 0;
+          transform: scaleX(1) translateX(60px);
+        }
+      }
+
+      /* TEXTO FINAL */
+
+      .pantalla-final {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 30;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+      }
+
+      .coco-titulo {
+        font-family: sans-serif;
+        font-size: 130px;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: -4px;
+        opacity: 0;
+        position: relative;
+        animation: entrarTexto 0.3s ease-out forwards;
+        animation-delay: 6s;
+      }
+
+      .mas {
+        font-size: 38px;
+        font-weight: 900;
+        color: brown;
+        position: absolute;
+        bottom: -10px;
+        left: 48%;
+      }
+
+      .vainilla {
+        font-family: sans-serif;
+        font-size: 75px;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        opacity: 0;
+        animation: entrarTexto 0.3s ease-out forwards;
+        animation-delay: 6.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="rama"></div>
+
+      <!-- COCOS -->
+      <div class="coco coco1"></div>
+      <div class="coco coco2"></div>
+      <div class="coco coco3"></div>
+      <div class="coco coco4"></div>
+      <div class="coco coco5"></div>
+
+      <!-- TEXTO -->
+      <div class="texto">
+        <p class="ya-probaste">Ya probaste</p>
+        <p class="el-nuevo">El nuevo</p>
+        <p class="sabor">Sabor</p>
+      </div>
+
+      <!-- TEXTO FINAL -->
+      <div class="pantalla-final">
+        <p class="coco-titulo">COCO <span class="mas">+</span></p>
+        <p class="vainilla">VAINILLA</p>
+      </div>
+    </div>
+  </body>
+</html>
