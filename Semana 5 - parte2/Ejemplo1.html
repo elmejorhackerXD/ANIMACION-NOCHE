@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PERSONAJE CSS</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: black;
+      }
+
+      .contenedor {
+        width: 400px;
+        height: 700px;
+        background: yellow;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .gorrito {
+        width: 120px;
+        height: 90px;
+
+        background: url(img/trigorro.jpg) center/cover no-repeat;
+
+        position: absolute;
+        left: 145px;
+        top: 70px;
+
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+        z-index: 5;
+      }
+
+      .cara {
+        width: 100px;
+        height: 100px;
+
+        background: url(img/cara\ de\ bob) center/cover no-repeat;
+
+        position: absolute;
+        left: 155px;
+        top: 140px;
+
+        clip-path: circle(50% at 50% 50%);
+
+        z-index: 4;
+      }
+
+      .cuerpo {
+        width: 180px;
+        height: 260px;
+
+        background: url(img/diseño\ de\ ropa.jpg) center/cover no-repeat;
+
+        position: absolute;
+        left: 110px;
+        top: 235px;
+
+        clip-path: polygon(41% 0, 67% 0, 82% 100%, 25% 99%);
+
+        z-index: 0;
+      }
+
+      .brazo1 {
+        width: 140px;
+        height: 120px;
+
+        background: url(img/brazo\ izquierdo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        position: absolute;
+        left: 40px;
+        top: 230px;
+
+        clip-path: polygon(31% 19%, 100% 20%, 100% 77%, 33% 77%, 0% 50%);
+
+        z-index: 0;
+      }
+
+      .brazo2 {
+        width: 140px;
+        height: 120px;
+
+        background: url(img/brazo\ derecho.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        position: absolute;
+        left: 220px;
+        top: 230px;
+
+        clip-path: polygon(0% 20%, 69% 19%, 100% 50%, 67% 77%, 0% 77%);
+
+        z-index: 0;
+      }
+
+      .pierno1 {
+        width: 70px;
+        height: 70px;
+
+        background: url(img/zapato\ izquierdo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        position: absolute;
+        left: 130px;
+        top: 470px;
+
+        clip-path: circle(50% at 50% 50%);
+
+        z-index: 0;
+      }
+
+      .pierno2 {
+        width: 70px;
+        height: 70px;
+        background: url(img/zapato\ derecho.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        position: absolute;
+        left: 205px;
+        top: 470px;
+
+        clip-path: circle(50% at 50% 50%);
+
+        z-index: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <div class="gorrito"></div>
+
+      <div class="cara"></div>
+
+      <div class="brazo1"></div>
+
+      <div class="brazo2"></div>
+
+      <div class="cuerpo"></div>
+
+      <div class="pierno1"></div>
+
+      <div class="pierno2"></div>
+    </div>
+    <footer>
+      <button
+        onclick="
+          window.location.href =
+            'https://elmejorhackerxd.github.io/ANIMACION-NOCHE/'
+        "
+        style="font-size: 20px; padding: 15px 30px"
+      >
+        ← Volver
+      </button>
+    </footer>
+  </body>
+</html>
