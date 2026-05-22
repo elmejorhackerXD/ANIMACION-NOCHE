@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EFECTO PARALLAX</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        background-color: black;
+      }
+
+      .contenedor {
+        width: 400px;
+        height: 700px;
+        border: 1px solid white;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+      }
+      .vapor {
+        width: 600px;
+        position: absolute;
+        z-index: 4;
+        top: 500px;
+        animation: vapor 10s 1 forwards;
+      }
+
+      @keyframes vapor {
+        from {
+          left: 0px;
+        }
+        to {
+          left: -200px;
+        }
+      }
+
+      .persona {
+        width: 800px;
+        position: absolute;
+        left: -200px;
+        top: 165px;
+        z-index: 3;
+        animation: persona 20s 1 forwards;
+      }
+
+      @keyframes persona {
+        from {
+          top: 250px;
+          scale: 80%;
+          filter: grayscale(100%);
+        }
+        to {
+          top: 200px;
+          scale: 100%;
+          filter: grayscale(0%);
+        }
+      }
+
+      .paisaje {
+        width: 800px;
+        position: absolute;
+        left: 0px;
+        z-index: 2;
+        animation: paisaje 20s 1 forwards;
+      }
+
+      @keyframes paisaje {
+        from {
+          top: 0px;
+          filter: blur(2px);
+        }
+        to {
+          top: -50px;
+          filter: blur(0px);
+        }
+      }
+
+      .cielo {
+        width: 900px;
+        position: absolute;
+        left: 0px;
+        z-index: 0;
+        animation: cielo 20s 1 forwards;
+      }
+
+      @keyframes cielo {
+        from {
+          scale: 100%;
+          filter: blur(5px);
+        }
+        to {
+          scale: 150%;
+          filter: blur(0px);
+        }
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+
+    <div class="contenedor">
+      <img class="vapor" src="img/VAPOR.png" alt="" />
+      <img class="cielo" src="img/CIELO.jpg" alt="" />
+      <img class="paisaje" src="img/FONDO.png" alt="" />
+      <img class="persona" src="img/PERSONA.png" alt="" />
+    </div>
+    <footer>
+      <button
+        onclick="
+          window.location.href =
+            'https://elmejorhackerxd.github.io/ANIMACION-NOCHE/'
+        "
+        style="font-size: 20px; padding: 15px 30px"
+      >
+        ← Volver
+      </button>
+    </footer>
+  </body>
+</html>
