@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+}
+
+.parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inicio {
+  z-index: 1;
+  animation: zoominicio 6s ease forwards;
+}
+
+@keyframes zoominicio {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.35);
+  }
+}
+
+.NOMBRE {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  opacity: 0;
+  animation: aparecerNombre 10s ease forwards;
+}
+
+@keyframes aparecerNombre {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.NOMBRE svg {
+  fill: rgb(246, 246, 246);
+  stroke: rgb(2, 2, 2);
+  stroke-width: 0px;
+  stroke-dasharray: 0%;
+  animation: nombre 10s;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes nombre {
+  from {
+    stroke-width: 0px;
+    stroke-dasharray: 0%;
+  }
+  to {
+    stroke-width: 100px;
+    stroke-dasharray: 150%;
+  }
+}
+.final {
+  z-index: 0;
+  animation: zoomfinal 6s ease forwards;
+}
+
+@keyframes zoomfinal {
+  from {
+    transform: scale(1.35);
+  }
+  to {
+    transform: scale(1);
+  }
+}
