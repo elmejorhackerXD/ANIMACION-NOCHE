@@ -91,3 +91,9 @@ body {
     transform: scale(1);
   }
 }
+footer {
+  position: sticky;
+  bottom: 0;
+  background: black; /* para que tape el contenido al hacer scroll */
+  z-index: 10;
+}
